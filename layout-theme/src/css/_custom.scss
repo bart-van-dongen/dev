@@ -1,0 +1,13 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+@import "../_css/color_schemes/color_schemes.scss";
+@import 'liferay-font-awesome/scss/font-awesome';
+@import 'liferay-font-awesome/scss/glyphicons';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$body-bg: rgb(240, 127, 191);
+
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */

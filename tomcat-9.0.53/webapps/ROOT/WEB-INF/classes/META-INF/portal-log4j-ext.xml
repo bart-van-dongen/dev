@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender class="org.apache.log4j.ConsoleAppender" name="CONSOLE">
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%t][%c{1}:%L] %m%n" />
+		</layout>
+	</appender>
+
+	<appender class="org.apache.log4j.rolling.RollingFileAppender" name="TEXT_FILE">
+		<rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+			<param name="FileNamePattern" value="@liferay.home@/logs/liferay@spi.id@.%d{yyyy-MM-dd}.log" />
+		</rollingPolicy>
+
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%t][%c{1}:%L] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- Log TU Delft info -->
+	<category name="com.worth">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="nl.tudelft">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="nl.tudelft.service">
+		<priority value="INFO" />
+	</category>
+
+	<!-- Log reindexing info -->
+	<category name="com.liferay.portal.search.internal.SearchEngineInitializer">
+		<priority value="INFO" />
+	</category>
+
+	<!-- Log db upgrade output -->
+	<category name="com.liferay.portal.kernel.upgrade">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="com.liferay.portal.tools.DBUpgrader">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="com.liferay.portal.upgrade">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="com.liferay.portal.upgrade.UpgradeProcessUtil">
+		<priority value="DEBUG" />
+	</category>
+
+	<category name="com.liferay.portal.upgrade.v7_0_0.UpgradePortletSettings">
+		<priority value="DEBUG" />
+	</category>
+
+	<root>
+		<priority value="INFO" />
+
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="TEXT_FILE" />
+	</root>
+</log4j:configuration>
