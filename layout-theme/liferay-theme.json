@@ -1,0 +1,9 @@
+{
+  "LiferayTheme": {
+    "appServerPath": "/Users/bart.van.dongen/Projects/server/configs/dev/tomcat-9.0.53",
+    "deployPath": "/Users/bart.van.dongen/Projects/server/configs/dev/deploy",
+    "deployed": true,
+    "deploymentStrategy": "LocalAppServer",
+    "url": "http://localhost:8080"
+  }
+}
